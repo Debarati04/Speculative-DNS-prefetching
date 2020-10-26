@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Custom Moz Homepage",
+	"description": "This extension shows a Google Image search result for the current page",
+	"version": "2.0",
+	"permissions": [
+		"dns",
+        "http://api.konvert.me/*"
+    ],
+ 
+	"content_scripts": [
+	{
+	"matches": ["*://localhost/*"],
+	"css": ["main.css"],
+	"js": ["content.js"]
+	}
+	],
+	"background": {
+    "scripts": ["background-script.js"],
+    "persistent": false
+  },
+	"page_action": {
+ 		"default_icon": "cournot.jpg",
+ 		"default_popup": "popup.html",
+ 		"default_title": "My custom google page!"
+ 	}
+}
